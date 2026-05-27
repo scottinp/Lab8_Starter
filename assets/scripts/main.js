@@ -54,6 +54,23 @@ function initializeServiceWorker() {
   // B5. TODO - In the event that the service worker registration fails, console
   //            log that it has failed.
   // STEPS B6 ONWARDS WILL BE IN /sw.js
+
+  // check first if serviceworker
+  if ('serviceWorker' in navigator) {
+    //wait page fully load 
+    window.addEventListener('load', () => {
+      //  point the browser at service worker 
+      navigator.serviceWorker
+        .register('./sw.js')
+        .then((registration) => {
+          // registration worked, log
+          console.log('ServiceWorker registered successfully:', registration.scope);
+        })
+        .catch((err) => {
+          console.log('ServiceWorker registration failed:', err);
+        });
+    });
+  }
 }
 
 /**
