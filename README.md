@@ -3,7 +3,7 @@
 Scottin Pham
 
 ## Deployed GitHub Pages URL
-
+https://scottinp.github.io/Lab8_Starter/
 
 ## Graceful Degradation & Service Workers
 
